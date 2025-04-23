@@ -4,7 +4,6 @@ namespace UpdateMethod
 {
     public class AnimateCube : MonoBehaviour
     {
-        [SerializeField] private float speed = 10;
         [SerializeField] private Transform cube;
 
         private void Reset() => cube = transform;
