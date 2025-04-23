@@ -1,5 +1,4 @@
-﻿using System.Linq;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace UpdateMethod
 {
@@ -22,7 +21,7 @@ namespace UpdateMethod
         private State _state = State.Traveling;
         private void Update()
         {
-            var travelDuration = travelCurve.keys.Last().time;
+            var travelDuration = travelCurve.keys[^1].time;
             switch (_state)
             {
                 case State.Traveling:
