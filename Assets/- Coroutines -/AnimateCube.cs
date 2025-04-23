@@ -24,9 +24,4 @@ namespace Coroutines
             }
         }
     }
-
-    public class AnimateText : MonoBehaviour
-    {
-        
-    }
 }
