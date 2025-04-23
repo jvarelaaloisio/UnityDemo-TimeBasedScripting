@@ -16,6 +16,8 @@ namespace UpdateMethod
         private float _currentCharScale;
         private short _currentChar;
         
+        private void Reset() => label = GetComponent<TMP_Text>();
+        
         private void Awake()
         {
             _originalText = label.text;

@@ -7,6 +7,7 @@ namespace UpdateMethod
         [SerializeField] private float speed = 10;
         [SerializeField] private Transform cube;
 
+        private void Reset() => cube = transform;
         private void Update()
         {
             var t = Time.time * (speed * Time.deltaTime);
