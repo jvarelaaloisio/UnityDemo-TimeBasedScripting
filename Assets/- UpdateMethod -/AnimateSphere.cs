@@ -17,33 +17,33 @@ namespace UpdateMethod
         [SerializeField] private Transform from;
         [SerializeField] private Transform to;
 
-        private float _travelTimer = 0;
-        private float _cooldownTimer = 0;
-        private State state = State.Traveling;
+        private float _travelTime = 0;
+        private float _cooldownTime = 0;
+        private State _state = State.Traveling;
         private void Update()
         {
             var travelDuration = travelCurve.keys.Last().time;
-            switch (state)
+            switch (_state)
             {
                 case State.Traveling:
-                    _travelTimer += Time.deltaTime;
-                    if (_travelTimer < travelDuration)
+                    _travelTime += Time.deltaTime;
+                    if (_travelTime < travelDuration)
                     {
-                        sphere.position = Vector3.Lerp(from.position, to.position, travelCurve.Evaluate(_travelTimer / travelDuration));
+                        sphere.position = Vector3.Lerp(from.position, to.position, travelCurve.Evaluate(_travelTime / travelDuration));
                         break;
                     }
 
                     sphere.position = to.position;
                     (from, to) = (to, from);
-                    state = State.CoolingDown;
+                    _state = State.CoolingDown;
                     return;
                 case State.CoolingDown:
-                    _cooldownTimer += Time.deltaTime;
-                    if (_cooldownTimer >= cooldown)
+                    _cooldownTime += Time.deltaTime;
+                    if (_cooldownTime >= cooldown)
                     {
-                        _cooldownTimer = 0;
-                        _travelTimer = 0;
-                        state = State.Traveling;
+                        _cooldownTime = 0;
+                        _travelTime = 0;
+                        _state = State.Traveling;
                     }
                     break;
             }
