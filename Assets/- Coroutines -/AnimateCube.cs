@@ -11,9 +11,6 @@ namespace Coroutines
 
         private void Reset() => cube = transform;
 
-        //Coroutines are automatically stopped when their GameObject is deactivated,
-        //but not when their component is just disabled.
-        //To have that logic, you can modify the While statement to While(enabled){} 
         private void OnEnable() => StartCoroutine(Rotate());
 
         private IEnumerator Rotate()

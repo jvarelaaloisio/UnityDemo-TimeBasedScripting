@@ -28,7 +28,8 @@ namespace UpdateMethod
                     _travelTime += Time.deltaTime;
                     if (_travelTime < travelDuration)
                     {
-                        sphere.position = Vector3.Lerp(from.position, to.position, travelCurve.Evaluate(_travelTime / travelDuration));
+                        var t = travelCurve.Evaluate(_travelTime / travelDuration);
+                        sphere.position = Vector3.Lerp(from.position, to.position, t);
                         break;
                     }
 
