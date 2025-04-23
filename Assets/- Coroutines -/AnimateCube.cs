@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using UnityEngine;
 
@@ -10,7 +9,10 @@ namespace Coroutines
 
         private void Reset() => cube = transform;
 
-        private void OnEnable() => StartCoroutine(Rotate());
+        private void OnEnable()
+        {
+            StartCoroutine(Rotate());
+        }
 
         private IEnumerator Rotate()
         {

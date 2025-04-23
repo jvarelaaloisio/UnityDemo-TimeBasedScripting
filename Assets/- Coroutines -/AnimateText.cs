@@ -30,7 +30,7 @@ namespace Coroutines
 
         private IEnumerator Rotate()
         {
-            while (true)
+            while (enabled)
             {
                 var sizeDelta = Time.deltaTime * speed;
                 _currentCharScale += sizeDelta;

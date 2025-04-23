@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
+using UnityEngine.InputSystem;
 
 namespace UpdateMethod
 {
@@ -47,6 +49,32 @@ namespace UpdateMethod
                     }
                     break;
             }
+        }
+    }
+
+    public class Character : MonoBehaviour
+    {
+        [SerializeField] private InputActionReference jumpInput;
+        private Coroutine _jumpCoroutine;
+
+        private void OnEnable()
+        {
+            jumpInput.action.started += HandleJump;
+        }
+
+        private void HandleJump(InputAction.CallbackContext obj)
+        {
+            if (_jumpCoroutine == null)
+            {
+                _jumpCoroutine = StartCoroutine(Jump());
+            }
+        }
+
+        private IEnumerator Jump()
+        {
+            yield return new WaitForFixedUpdate();
+            GetComponent<Rigidbody>().AddForce(Vector3.up);
+            
         }
     }
 }

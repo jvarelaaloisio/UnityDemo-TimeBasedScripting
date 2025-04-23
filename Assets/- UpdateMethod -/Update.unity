@@ -137,7 +137,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &30665777
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -675,7 +675,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50e9f9e6f8f9b3fbfb7f8daa31eec5b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
   cube: {fileID: 825823666}
 --- !u!23 &825823664
 MeshRenderer:
@@ -812,7 +811,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1079734283
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1156,7 +1155,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1409187631
 MonoBehaviour:
   m_ObjectHideFlags: 0
