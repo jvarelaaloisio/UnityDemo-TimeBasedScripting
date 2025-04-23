@@ -10,7 +10,7 @@ namespace UpdateMethod
         private void Reset() => cube = transform;
         private void Update()
         {
-            var t = Time.time * (speed * Time.deltaTime);
+            var t = Time.time;
             cube.Rotate(new Vector3(Mathf.Cos(t), Mathf.Sin(t), Mathf.Cos(t)), Space.World);
         }
     }

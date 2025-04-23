@@ -18,7 +18,7 @@ namespace Coroutines
             //destroyCancellationToken is an object that can request a cancellation on a process from the outside.
             while (!destroyCancellationToken.IsCancellationRequested)
             {
-                var t = Time.time * (speed * Time.deltaTime);
+                var t = Time.time;
                 cube.Rotate(new Vector3(Mathf.Cos(t), Mathf.Sin(t), Mathf.Cos(t)), Space.World);
                 
                 //This "yields" control to the system. 
